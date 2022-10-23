@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'com.xbaimiao.test'
+version '1.0.0'
+
+repositories {
+    mavenLocal()
+    maven {
+        url "https://repo.xbaimiao.com/nexus/content/repositories/releases/"
+    }
+    maven {
+        url "https://repo.aikar.co/content/groups/aikar/"
+    }
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.setEncoding("UTF-8")
+}
+
+dependencies {
+    implementation "top.mcplugin.lib:module-main:1.0.4-16"
+    implementation "top.mcplugin.lib:module-lang:1.0.4-16"
+    implementation "com.github.cryptomorin:XSeries:9.1.0"
+//    implementation "de.tr7zw:item-nbt-api:2.10.0"
+    compileOnly 'public:paper:1.16.5'
+    compileOnly fileTree('libs')
+}
+
+shadowJar {
+    relocate('top.mcplugin.lib', project.group + ".shadow")
+    relocate('com.cryptomorin.xseries', project.group + ".shadow")
+    exclude("LICENSE")
+    exclude("META-INF/**")
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

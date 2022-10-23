@@ -1,0 +1,5 @@
+main: com.xbaimiao.test.Test
+name: Test
+version: '${version}'
+author: xbaimiao
+api-version: 1.13

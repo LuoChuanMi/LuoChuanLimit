@@ -3,7 +3,7 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
-group 'com.xbaimiao.test'
+group 'com.xbaimiao.luochuan.limit'
 version '1.0.0'
 
 repositories {

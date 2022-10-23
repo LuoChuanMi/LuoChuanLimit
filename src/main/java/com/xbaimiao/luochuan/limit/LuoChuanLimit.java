@@ -1,9 +1,9 @@
-package com.xbaimiao.test;
+package com.xbaimiao.luochuan.limit;
 
 import top.mcplugin.lib.Plugin;
 
 @SuppressWarnings("unused")
-public class Test extends Plugin {
+public class LuoChuanLimit extends Plugin {
 
     @Override
     public void enable() {

@@ -1,5 +1,5 @@
-main: com.xbaimiao.test.Test
-name: Test
+main: com.xbaimiao.luochuan.limit.LuoChuanLimit
+name: LuoChuanLimit
 version: '${version}'
 author: xbaimiao
 api-version: 1.13

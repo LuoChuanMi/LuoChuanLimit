@@ -17,7 +17,7 @@ public class LimitListener implements Listener {
     public void b(BlockBreakEvent event) {
         Player player = event.getPlayer();
         BlockBreakData blockBreakData = PlayerData.getBlockBreakData(player);
-        if (blockBreakData.get(event.getBlock().getLocation()) > 100) {
+        if (blockBreakData.get(event.getBlock().getLocation()) > 64) {
             event.setCancelled(true);
             Lang.sendLang(player, "block-limit");
         } else {

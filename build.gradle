@@ -22,8 +22,8 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    implementation "top.mcplugin.lib:module-main:1.0.4-16"
-    implementation "top.mcplugin.lib:module-lang:1.0.4-16"
+    implementation "top.mcplugin.lib:module-main:1.0.4-beta29"
+    implementation "top.mcplugin.lib:module-lang:1.0.4-beta29"
     implementation "com.github.cryptomorin:XSeries:9.1.0"
 //    implementation "de.tr7zw:item-nbt-api:2.10.0"
     compileOnly 'public:paper:1.16.5'
@@ -31,7 +31,7 @@ dependencies {
 }
 
 shadowJar {
-    relocate('top.mcplugin.lib', project.group + ".shadow")
+    relocate('top.mcplugin.lib', project.group + ".mcplugin.lib")
     relocate('com.cryptomorin.xseries', project.group + ".shadow")
     exclude("LICENSE")
     exclude("META-INF/**")
